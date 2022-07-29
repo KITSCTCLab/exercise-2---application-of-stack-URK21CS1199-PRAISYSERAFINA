@@ -6,7 +6,7 @@ class Evaluate:
  #   stack: A List which acts as a Stack.
 
 
-  def _init_(self,size):
+  def _init_(self, size):
   #Inits Evaluate with top, size_of_stack and stack.
   #  Arguments:
   #    size_of_stack: An integer to set the size of stack.
@@ -79,3 +79,14 @@ class Evaluate:
         self.pop()
         self.push(result)
     return self.pop()
+    
+
+
+# Do not change the following code
+postfix_expression = input()  # Read postfix expression
+tokens = postfix_expression.split()
+evaluate = Evaluate(len(tokens))
+if evaluate.validate_postfix_expression(tokens):
+    print(evaluate.evaluate_postfix_expression(tokens))
+else:
+    print('Invalid postfix expression')
